@@ -1,0 +1,165 @@
+@import url("https://fonts.googleapis.com/css?family=Sen:regular,500,600,700,800&display=swap");
+* {
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*::before,
+*::after {
+  display: inline-block;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  color: rgba(12, 0, 0, 0.9490196078);
+  line-height: 1;
+  font-family: "Sen";
+  font-size: 16px;
+  background-color: #fbe7c6;
+  text-rendering: optimizeLegibility;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+input,
+button,
+textarea {
+  font-family: "Sen";
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+  background-color: transparent;
+}
+
+input,
+textarea {
+  width: 100%;
+}
+
+button,
+select,
+option {
+  cursor: pointer;
+}
+
+a {
+  display: inline-block;
+  color: inherit;
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.content {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.slider {
+  max-width: 80%;
+  border: 2px solid #5f9783;
+  margin: 0 auto;
+  overflow: hidden;
+  background-color: #b1ddce;
+}
+.slider__inner {
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: orangered;
+}
+.slider__item img {
+  width: 1280px;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.controls {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: #e7eeec;
+  font-size: 36px;
+  top: -200px;
+  margin-bottom: -36px;
+  cursor: pointer;
+  padding: 0 2%;
+}
+.controls_prev:hover {
+  background-color: #88a8b2;
+}
+.controls_next:hover {
+  background-color: #88a8b2;
+}
+
+p {
+  color: #5f9783;
+  font-size: 24px;
+  text-align: center;
+}/*# sourceMappingURL=slider_adaptive.css.map */

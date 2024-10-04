@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/modal_window.css" />
+    <title>Modal Window</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="content">
+        <div class="container">
+          <!-- кнопки тригеры вызова модального вызова-->
+          <div class="buttons">
+            <div class="buttons__row">
+              <button class="btn btn-light" data-modalopentwo>
+                Connect With Us
+              </button>
+              <button class="btn btn-dark" data-modalopentwo>
+                Connect With Us
+              </button>
+            </div>
+          </div>
+          <!-- кнопки тригеры вызова модального вызова-->
+
+          <!-- модальное окно-->
+          <div class="modal-two">
+            <div class="modal-two__row">
+              <div class="modal-two__body">
+                <form action="#" class="modal-two__form">
+                  <div data-modalclosetwo class="modal-two__close">&times;</div>
+                  <div class="modal-two__title">Leave your contacts</div>
+                  <input
+                    required
+                    placeholder="Enter your name"
+                    name="text"
+                    type="text"
+                    class="modal-two__input"
+                  />
+                  <input
+                    required
+                    placeholder="Enter your phonenumber"
+                    name="text"
+                    type="tel"
+                    class="modal-two__input"
+                  />
+                  <input
+                    required
+                    placeholder="Enter your e-mail"
+                    name="mail"
+                    type="mail"
+                    class="modal-two__input"
+                  />
+                  <button class="btn btn-min">OK</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/modal_window.js"></script>
+  </body>
+</html>

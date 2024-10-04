@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css?family=Sen:regular,500,600,700,800&display=swap");
+
+@import "defaultnullstyle";
+
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1 1 auto;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.slider {
+  max-width: 80%;
+  //   max-height: 100%;
+  border: 2px solid #5f9783;
+  //   margin: 30px auto;
+  margin: 0 auto;
+  overflow: hidden;
+  background-color: #b1ddce;
+
+  &__inner {
+    transition: all 1s ease-in-out;
+    display: flex;
+    background-color: orangered;
+  }
+
+  &__item {
+    img {
+      width: 1280px;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+}
+
+.controls {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  color: #e7eeec;
+  font-size: 36px;
+  top: -200px;
+  margin-bottom: -36px; //height of controls 36 px, to do it because exist negative top
+  cursor: pointer;
+  //   max-width: 100%;
+
+  padding: 0 2%;
+
+  //   @media (max-width:1024px) {
+  //     top: -150px;
+  //   }
+  //   @media (max-width:768px) {
+  //     top: -100px;
+  //   }
+  //   @media (max-width:425px) {
+  //     top: -65px;
+  //   }
+  //   @media (max-width:375px) {
+  //     top: -60px;
+  //   }
+  //   @media (max-width:320px) {
+  //     top: -50px;
+  //   }
+
+  &_prev {
+    &:hover {
+      background-color: #88a8b2;
+    }
+  }
+
+  &_next {
+    &:hover {
+      background-color: #88a8b2;
+    }
+  }
+}
+
+p {
+  color: #5f9783;
+  font-size: 24px;
+  text-align: center;
+}

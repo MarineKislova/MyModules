@@ -1,0 +1,70 @@
+@import "defaultnullstyle";
+
+.wrapper {
+    min-height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .content {
+    flex: 1 1 auto;
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0px auto;
+  }
+  
+  .tabs-withjs {
+  }
+  .tab-nav {
+  }
+  .tab-btn {
+    // background-color: red;
+    // color: #696969;
+    font-weight: bold;
+    font-size: 16px;
+    // text-decoration: underline;
+  }
+  .tab-btn-active {
+  }
+  .tab-contentjs {
+    &__item {
+      display: none;
+    }
+  
+    &__title {
+    }
+  
+    &__img {
+      overflow: hidden;
+      position: relative;
+      min-height: 150px;
+      img {
+        width: 50%;
+        height: 100%;
+        object-fit: scale-down;
+        position: absolute;
+        top: 0;
+        left: -200px;
+        animation: moving 1s ease reverse forwards;
+  
+        @keyframes moving {
+          0% {
+            left: -200px;
+          }
+          100% {
+            left: 0px;
+          }
+        }
+      }
+    }
+  }
+  
+  .show {
+    display: block;
+  }
+  
+  .hide {
+    display: none;
+  }
+  
