@@ -1,6 +1,49 @@
 window.addEventListener("DOMContentLoaded", () => {
   "use strict";
 
+  //banner slider
+  function rollBanner({
+    wrapperSelector,
+    lineSelector,
+    itemSelector,
+    dotSelector,
+  }) {
+    let count = 0;
+    let width;
+    const banner = document.querySelector(wrapperSelector);
+    const bannerLine = document.querySelector(lineSelector);
+    const bannerItems = document.querySelectorAll(itemSelector);
+    const dots = document.querySelectorAll(dotSelector);
+    width = bannerItems[0].clientWidth;
+    bannerLine.style.width = width * bannerItems.length + "px";
+
+    function rollSlide() {
+      count++;
+
+      if (count == bannerItems.length) {
+        count = 0;
+      }
+
+      bannerLine.style.transform = `translateX(-${width * count}px)`;
+      dotNavigation();
+    }
+
+    setInterval(rollSlide, 3000);
+
+    //dots navigation
+    function dotNavigation() {
+      dots.forEach((dot) => dot.classList.remove("active"));
+      dots[count].classList.add("active");
+    }
+  }
+
+  rollBanner({
+    wrapperSelector: ".banner",
+    lineSelector: ".banner__line",
+    itemSelector: ".banner__item",
+    dotSelector: ".banner__dot",
+  });
+
   //slider
   function slider({
     lineSelector,
@@ -48,6 +91,19 @@ window.addEventListener("DOMContentLoaded", () => {
       sliderLine.style.transform = `translateX(-${offset}px)`;
     });
 
+    // slider with keyboard navigation
+    function keyNavigation() {
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "ArrowRight") {
+          arrowNext.click();
+        } else if (event.key === "ArrowLeft") {
+          arrowPrev.click();
+        }
+      });
+    }
+
+    keyNavigation();
+
     // // Auto slide
     // function autoSlideInterval() {
     //   setInterval(() => {
@@ -57,12 +113,12 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // autoSlideInterval();
 
-    // // Click on slides to navigate to the corresponding slide
-    // slides.forEach((item) => {
-    //   item.addEventListener("mousedown", () => {
-    //     arrowNext.click();
-    //   });
-    // });
+    // Click on slides to navigate to the corresponding slide
+    slides.forEach((item) => {
+      item.addEventListener("mousedown", () => {
+        arrowNext.click();
+      });
+    });
   }
 
   slider({
@@ -73,48 +129,7 @@ window.addEventListener("DOMContentLoaded", () => {
     arrowPrevSelector: ".slider__btn--prev",
   });
 
-  function rollBanner({
-    wrapperSelector,
-    lineSelector,
-    itemSelector,
-    dotSelector,
-  }) {
-    let count = 0;
-    let width;
-    const banner = document.querySelector(wrapperSelector);
-    const bannerLine = document.querySelector(lineSelector);
-    const bannerItems = document.querySelectorAll(itemSelector);
-    const dots = document.querySelectorAll(dotSelector);
-    width = bannerItems[0].clientWidth;
-    bannerLine.style.width = width * bannerItems.length + "px";
-
-    function rollSlide() {
-      count++;
-
-      if (count == bannerItems.length) {
-        count = 0;
-      }
-
-      bannerLine.style.transform = `translateX(-${width * count}px)`;
-      dotNavigation();
-    }
-
-    setInterval(rollSlide, 3000);
-
-    //dots navigation
-    function dotNavigation() {
-      dots.forEach((dot) => dot.classList.remove("active"));
-      dots[count].classList.add("active");
-    }
-  }
-
-  rollBanner({
-    wrapperSelector: ".banner",
-    lineSelector: ".banner__line",
-    itemSelector: ".banner__item",
-    dotSelector: ".banner__dot",
-  });
-
+  // slider with dots navigation
   function sliderDotsNavigation({
     wrapperSelector,
     lineSelector,
@@ -150,5 +165,36 @@ window.addEventListener("DOMContentLoaded", () => {
     lineSelector: ".slider-dots__line",
     itemSelector: ".slider-dots__item",
     dotSelector: ".slider-dots__light",
+  });
+
+ 
+
+  // slider with keyboard navigation
+  function keyNavigation() {
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "ArrowRight") {
+        arrowNext.click();
+      } else if (event.key === "ArrowLeft") {
+        arrowPrev.click();
+      }
+    });
+  }
+
+  keyNavigation();
+
+  // Auto slide
+  function autoSlideInterval() {
+    setInterval(() => {
+      arrowNext.click();
+    }, 3000);
+  }
+
+  autoSlideInterval();
+
+  // Click on slides to navigate to the corresponding slide
+  document.querySelectorAll(".").forEach((item) => {
+    item.addEventListener("mousedown", () => {
+      arrowNext.click();
+    });
   });
 });

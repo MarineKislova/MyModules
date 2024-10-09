@@ -14,7 +14,6 @@ window.addEventListener("DOMContentLoaded", () => {
       parentModal.style.display = "block";
     }
 
-
     function hideModal() {
       parentModal.style.display = "none";
     }
@@ -29,7 +28,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
     parentModal.addEventListener("click", (e) => {
       if (e.target === parentModal) {
-        
         hideModal();
       }
     });
@@ -37,19 +35,21 @@ window.addEventListener("DOMContentLoaded", () => {
     document.addEventListener("keydown", (e) => {
       if (e.code === "Escape") {
         hideModal();
-        
       }
     });
 
     function showByScroll() {
-      let offsetTop = parentModal.offsetTop;
-      if (offsetTop + scrollY >= 200) {
+      // let offsetTop = parentModal.offsetTop;
+      // let offsetTop = document.documentElement.offsetTop;
+      let scrollY = window.scrollY || document.documentElement.scrollTop;
+
+      if (scrollY >= 100) { //offsetTop + scrollY 
         const modalTimerId = setTimeout(
           () => showModal(parentSelector, modalTimerId),
           1000
         );
 
-        // disappearing popup after open
+        //* disappearing popup after open
         // const modalTimerClose = setTimeout(
         //   () => hideModal(parentSelector, modalTimerClose),
         //   5000
