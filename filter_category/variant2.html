@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Filter Category</title>
+  </head>
+  <body>
+    <style>
+      .article__filter {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+
+      .filter-btn {
+        padding: 10px 20px;
+        margin: 0 5px;
+        background-color: #f0f0f0;
+        border: none;
+        cursor: pointer;
+      }
+
+      .filter-btn:hover {
+        background-color: #e0e0e0;
+      }
+
+      .article__items {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .article__item {
+        padding: 20px;
+        background-color: #f0f0f0;
+        border-radius: 5px;
+        width: 300px;
+      }
+    </style>
+
+
+    <!-- filter -->
+    <div class="article__filter">
+      <button class="filter-btn" data-filter="javascript">JavaScript</button>
+      <button class="filter-btn" data-filter="tests_online">
+        Тесты on-line
+      </button>
+      <button class="filter-btn" data-filter="interview">
+        Прохождение собеседования
+      </button>
+      <button class="filter-btn" data-filter="interview_questions">
+        Вопросы на собеседовании
+      </button>
+      <button class="filter-btn" data-filter="all">Все категории</button>
+    </div>
+    <!-- end filter -->
+
+    <!-- articles -->
+    <div class="article__items">
+      <div class="article__item javascript" data-category="javascript">
+        <h2>JavaScript</h2>
+        <p>
+          JavaScript — мультипарадигменный язык программирования. Поддерживает
+          объектно-ориентированный, императивный и функциональный стили.
+          Является реализацией спецификации ECMAScript.
+        </p>
+      </div>
+      <div class="article__item tests_online" data-category="tests_online">
+        <h2>Тесты on-line</h2>
+        <p>
+          Тестирование — процесс измерения характеристик продукта или процесса с
+          использованием установленных критериев.
+        </p>
+      </div>
+      <div class="article__item interview" data-category="interview">
+        <h2>Прохождение собеседования</h2>
+        <p>
+          Собеседование — это процесс, в ходе которого работодатель оценивает
+          соискателя на предмет его соответствия требованиям вакансии.
+        </p>
+      </div>
+      <div
+        class="article__item interview_questions"
+        data-category="interview_questions"
+      >
+        <h2>Вопросы на собеседовании</h2>
+        <p>
+          Вопросы на собеседовании — это список вопросов, которые могут быть
+          заданы соискателю на собеседовании.
+        </p>
+      </div>
+    </div>
+    <!-- end articles -->
+
+    <script src="script.js"></script>
+  </body>
+</html>
